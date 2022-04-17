@@ -6,8 +6,11 @@ def curve(t):
     y = 6 * np.sin(t) - 2 * np.sin(4.5 * t)
     return x, y
 
-# Dividindo a curva em um poligono de 1000 pontos
-interval = np.linspace(0, 4 * np.pi, 1000)
+# Aproximando a curva a um poligono 
+# A cada intervalo 0.001 do domínio , adiciona-se um ponto
+
+dt = 0.001
+interval = np.arange(0, 4 * np.pi, dt)
 
 length = 0
 for t in range(1,len(interval)):
